@@ -26,7 +26,7 @@ Character::~Character() {}
 
 void Character::displayInfo() const
 {
-	std::cout << this->_name << ":\n";
+	std::cout << std::setw(10) << this->_name << ":\n";
 	std::cout << std::setw(10) << this->_health << " hp\n";
 	std::cout << std::setw(10) << this->_armor << " armor\n";
 	std::cout << std::setw(10) << this->_strength << " strength\n";

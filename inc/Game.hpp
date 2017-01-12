@@ -22,6 +22,7 @@ public:
 	void loop(void); /* The loop game */
 
 private:
+	void action(std::string const&); /* Handle the action */
 	void displayHelp(void) const; /* Loops helpers */
 
 }; /* class Game */

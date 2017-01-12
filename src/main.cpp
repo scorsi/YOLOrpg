@@ -1,4 +1,6 @@
 
+#include <iostream>
+#include <string>
 #include "Game.hpp"
 
 int main()
@@ -6,7 +8,12 @@ int main()
 	Game game;
 
 	game.start();
-	game.showSynopsis();
+
+	std::string answer;
+	std::cout << "Display the synopsis? (\"Y\" for \"Yes\")" << std::endl;
+	std::cin >> answer;
+	if (answer == "Y")
+		game.showSynopsis();
 	game.loop();
 
 	return 0;

@@ -4,12 +4,6 @@
 #include <unistd.h> /* Just for usleep in showSynopsis() */
 #include "Game.hpp"
 
-void Game::displayHelp(void) const
-{
-	std::cout << "'Q': quit the game.\n";
-	std::cout << "'C': display your character's informations.\n";
-	std::cout << "'M': display the monster informations.\n";
-}
 
 Game::Game()
 {
@@ -43,8 +37,8 @@ void Game::showSynopsis(void)
 	size_t timeToSleep = 500000;
 
 	std::cout << "\n\n=======================================\n\n";
-
-	std::cout << "SYNOPSIS\n\n";
+	std::cout << "SYNOPSIS";
+	std::cout << "\n\n=======================================\n\n";
 
 	std::cout << "You are a graduate of a high school of heroes.\n\n";
 	usleep(timeToSleep);
@@ -72,11 +66,27 @@ void Game::showSynopsis(void)
 
 void Game::loop(void)
 {
-	std::string answer = "C";
+	std::string action = "C";
 	do {
-		std::cout << "Type 'H' to see help.\n";
-		std::cin >> answer;
-		//checkAnswer(answer);
+		std::cout << "Type 'H' to see help." << std::endl;
+		std::cin >> action;
+		if (action == "Q") break;
+		this->action(action);
 		std::cout << "\n\n=======================================\n" << std::endl;
-	} while (answer != "Q");
+
+	} while (true); /* Infinite loop is life. */
+}
+
+void Game::action(std::string const& action)
+{
+	if (action == "H")
+		this->displayHelp();
+	else if (action == "C")
+		this->_perso->displayInfo();
+}
+
+void Game::displayHelp(void) const
+{
+	std::cout << "'Q': quit the game.\n";
+	std::cout << "'C': display your character's informations.\n";
 }
