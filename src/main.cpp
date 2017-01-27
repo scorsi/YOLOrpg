@@ -1,20 +1,15 @@
+//
+// Created by sylvain on 27/01/17.
+//
 
-#include <iostream>
-#include <string>
-#include "Game.hpp"
+#include "Game/Game.hh"
 
 int main()
 {
-	Game game;
+  Game game;
 
-	game.start();
+  game.start();
+  game.loop();
 
-	std::string answer;
-	std::cout << "Display the synopsis? (\"Y\" for \"Yes\")" << std::endl;
-	std::cin >> answer;
-	if (answer == "Y")
-		game.showSynopsis();
-	game.loop();
-
-	return 0;
+  return 0;
 }
