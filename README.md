@@ -1,5 +1,5 @@
 # Sparkling Eyes RPG
-A text RPG in C++ for Linux. Tested and developed for `Ubuntu 16.04LTS`.
+A text RPG in C++ for Linux. Tested and developed for `Ubuntu 16.04LTS`. Never finished.
 
 ### How to play it
 
